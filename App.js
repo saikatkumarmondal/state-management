@@ -1,15 +1,21 @@
 import { StyleSheet, Text, View } from "react-native";
 import Home from "./component/Home";
 import { ThemeProvider } from "./context/ThemeContext";
+import { Provider } from "react-redux";
+import { store } from "./store/store";
+import HomeScreen from "./component/HomeScreen";
 
 export default function App() {
   return (
-    <ThemeProvider>
-      <View style={styles.container}>
-        <Text style={styles.overlayText}>Om Namah Shivaya</Text>
-        <Home />
-      </View>
-    </ThemeProvider>
+    // <ThemeProvider>
+    //   <View style={styles.container}>
+    //     <Text style={styles.overlayText}>Om Namah Shivaya</Text>
+    //     <Home />
+    //   </View>
+    // </ThemeProvider>
+    <Provider store={store}>
+      <HomeScreen />
+    </Provider>
   );
 }
 
